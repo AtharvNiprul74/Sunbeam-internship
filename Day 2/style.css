@@ -1,0 +1,76 @@
+*{
+    border: 0;
+}
+
+input[type="text"]{
+    border: 1px black solid;
+    border-radius: 5px;
+}
+
+input[type="date"]{
+    border: 1px black solid;
+    border-radius: 5px;
+}
+
+input[type="password"]{
+    border: 1px black solid;
+    border-radius: 5px;
+}
+
+#address{
+    border: 1px black solid;
+    border-radius: 5px;
+}
+
+#main-text{
+    font-size: 25px;
+    margin: 2px; 
+}
+
+#img-sunbeam{
+    height: 50px;
+    width: 200px;
+    padding-left: 40%;
+}
+
+#choose-course{
+    border: 1px black solid;
+}
+
+.yt{
+    height: 200px;
+    width: 400px;
+    padding-left: 50px;
+}
+
+
+.main{
+    display: flex;
+    align-items:center;
+}
+
+.left-panel{
+    height: 350px;
+    width: 500px;
+    align-content: center;
+}
+
+.right-panel{
+    height: 350px;
+    width: 500px;
+    align-content: center;
+}
+
+.info-table{
+    padding-left: 30px;
+}
+
+#submit-btn{
+    border: 1px black solid;
+    border-radius: 5px;
+}
+
+#reset-btn{
+    border: 1px black solid;
+    border-radius: 5px;
+}

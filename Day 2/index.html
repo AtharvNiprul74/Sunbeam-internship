@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img id = "img-sunbeam" src="https://www.sunbeaminfo.in/img/new/new_logo.png" alt="Sunbeam Logo">
+    <h1 id = "main-text" style="text-align: center;">Sunbeam Registration Form</h1>
+    <div class="main">
+        <div class="left-panel">
+            <iframe class = "yt" height="100px" width="200px" title = "Youtube video" src="https://www.youtube.com/embed/02q9aAVv1NI" ></iframe>
+        </div>
+        <div class="right-panel">
+            <form>
+            <table class="info-table">
+                <tr>
+                    <td style="font-weight: bold;">Name:</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;">BirthDate:</td>
+                    <td><input type="date"></td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;">Email:</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;">Password:</td>
+                    <td><input type="password"></td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;">Address:</td>
+                    <td><textarea id = "address"></textarea></td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;">Gender:</td>
+                    <td>
+                        <input type="radio" name="gender">Male
+                        <input type="radio" name="gender">Female
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;">Upload Photo:</td>
+                    <td><input type="file"></td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;">Select your course:</td>
+                    <td>
+                        <select id = "choose-course">
+                            <option disabled selected>Choose Your Course</option>
+                            <option>CSE</option>
+                            <option>AIML</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;">Skill Set:</td>
+                    <td>
+                        <input type="checkbox"> Java
+                        <input type="checkbox">CPP
+                        <input type="checkbox">OS
+                    </td>
+                </tr>
+                <tr>
+                    <td><input id = "submit-btn" type="submit" value="Register"></td>
+                    <td><input id = "reset-btn" type="reset" value="Reset Fields"></td>
+                </tr>
+            </table>
+            </form>
+        </div>
+    </div>
+</body>
