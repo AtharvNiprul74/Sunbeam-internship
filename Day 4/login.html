@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>  
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="d-flex vh-100 justify-content-center">
+            <div class="card p-4 shadow login-card">
+                <h3 class="text-center mb-3">Login</h3>
+
+                <form id="loginForm" novalidate>
+                    <div class="mb-3">
+                        <label>Email address</label>
+                        <input type="email" id="loginEmail" class = "form-control">
+                        <small class="text-denger" id="loginEmailErr"></small>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Password</label>
+                        <input type="password" id="loginPass" class="form-control">
+                        <small class="text-denger" id="loginPassErr"></small>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                </form>
+                <script src="login_page.js"></script>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+body{
+    background-color: #f5f5f5;
+}
+
+
+.login-card,
+.register-card{
+    width: 380px;
+    margin: 150px;
+    border-radius: 15px;
+}
+
+input.is-valid{
+    border: 2px solid green;
+}
+
+input.is-invalid{
+    border: 2px solid red;
+}
