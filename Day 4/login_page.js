@@ -13,7 +13,7 @@ loginForm.addEventListener("submit",(e) =>{
     if(email.value.trim() === " "|| !email.value.includes("@"))
     {
         email.classList.add("is-invalid")
-        emailError.innerText = "Enter valid email address !!"
+        emailError.innerText = "Enter valid email address."
         loginDone = false
     }
 

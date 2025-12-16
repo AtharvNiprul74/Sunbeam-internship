@@ -17,7 +17,7 @@ registerPage.addEventListener("submit",(e) => {
     if(name.value.trim() === "")
     {
         name.classList.add("is-invalid")
-        nameError.innerText = "Enter name !!"
+        nameError.innerText = "Enter valid Name."
         registerDone = false
     }
     
@@ -31,7 +31,7 @@ registerPage.addEventListener("submit",(e) => {
     if(email.value.trim() === " "|| !email.value.includes("@"))
     {
         email.classList.add("is-invalid")
-        emailError.innerText = "Enter Valid Elements"
+        emailError.innerText = "Enter Valid Elements."
         registerDone = false
     }
     
@@ -46,7 +46,7 @@ registerPage.addEventListener("submit",(e) => {
     if(pass.value.length < 6)
     {
         pass.classList.add("is-invalid")
-        passError.innerText = "Password length must be at least 6 characters !!"
+        passError.innerText = "Password length must be at least 6 characters."
         registerDone = false
     }
 
@@ -60,7 +60,7 @@ registerPage.addEventListener("submit",(e) => {
     if(!/^\d{10}$/.test(phone.value))
     {
         phone.classList.add("is-invalid")
-        phnoError.innerText = "Enter valid 10 digit phone number !!"
+        phnoError.innerText = "Enter valid 10 digit phone number."
         registerDone = false
     }
 
