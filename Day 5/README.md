@@ -1,3 +1,3 @@
 ##📷 Screenshot
 
-![Todo App Screenshot] (ss.png)
+![Todo App Screenshot] (/ss.png)
