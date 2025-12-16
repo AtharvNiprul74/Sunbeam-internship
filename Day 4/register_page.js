@@ -7,11 +7,17 @@ registerPage.addEventListener("submit",(e) => {
     let pass = document.getElementById("regPass")
     let phone = document.getElementById("regPhone")
 
+    let nameError = document.getElementById("nameErr")
+    let emailError = document.getElementById("emailErr")
+    let passError = document.getElementById("pwdErr")
+    let phnoError = document.getElementById("phnoErr")
+
     let registerDone = true
 
     if(name.value.trim() === "")
     {
         name.classList.add("is-invalid")
+        nameError.innerText = "Enter name !!"
         registerDone = false
     }
     
@@ -19,23 +25,28 @@ registerPage.addEventListener("submit",(e) => {
     {
         name.classList.remove("is-invalid")
         name.classList.add("is-valid")
+        nameError.innerText = ""
     }
 
     if(email.value.trim() === " "|| !email.value.includes("@"))
     {
         email.classList.add("is-invalid")
+        emailError.innerText = "Enter Valid Elements"
         registerDone = false
     }
     
     else
     {
         email.classList.remove("is-invalid")
+        email.classList.add("is-valid")
         registerDone = false
+        emailError.innerText = ""
     }
  
     if(pass.value.length < 6)
     {
         pass.classList.add("is-invalid")
+        passError.innerText = "Password length must be at least 6 characters !!"
         registerDone = false
     }
 
@@ -43,11 +54,13 @@ registerPage.addEventListener("submit",(e) => {
     {
         pass.classList.remove("is-invalid")
         pass.classList.add("is-valid")
+        passError.innerText = ""
     }
 
-    if(!/^d{10}$/.test(phone.value))
+    if(!/^\d{10}$/.test(phone.value))
     {
         phone.classList.add("is-invalid")
+        phnoError.innerText = "Enter valid 10 digit phone number !!"
         registerDone = false
     }
 
@@ -55,6 +68,7 @@ registerPage.addEventListener("submit",(e) => {
     {
         phone.classList.remove("is-invalid")
         phone.classList.add("is-valid")
+        phnoError.innerText = ""
     }
 
     if(registerDone)
