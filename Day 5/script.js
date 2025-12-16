@@ -11,7 +11,7 @@ inputBox.addEventListener("input", e => {
     }
 })
 
-inputBox.addEventListener("keydown",e =>{
+inputBox.addEventListener("keydown",e => {
     if(e.key === "Enter")
         btn.click()
 })
