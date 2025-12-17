@@ -1,0 +1,106 @@
+{
+  "info": {
+    "_postman_id": "a4d0a1e4-deba-4f6e-b457-a76a5bb37a5a",
+    "name": "Student_data",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "get student data",
+      "id": "360bba3a-f136-40c3-b072-7eb4b935cfd4",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/students",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4000",
+          "path": [
+            "students"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "insert student",
+      "id": "930571a0-e6be-4c71-995e-61deef2996ed",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"Shravani\",\r\n    \"email\":\"patilshravani602@gmail.com\",\r\n    \"course\":\"MERN\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:4000/students",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4000",
+          "path": [
+            "students"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "update student",
+      "id": "1ee6f79c-4ee4-4c63-9297-380f1ef7c802",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"Shravani\",\r\n    \"email\":\"spatil@gmail\",\r\n    \"course\":\"MERN\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:4000/students",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4000",
+          "path": [
+            "students"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "delete student",
+      "id": "b7549f6f-690a-43db-a47a-46ea41a2d551",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\":\"abc@gmail.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/students",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4000",
+          "path": [
+            "students"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
