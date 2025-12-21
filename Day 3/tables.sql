@@ -2,10 +2,10 @@ create database sunbeam_db;
 
 use sunbeam_db;
 
-Create table users (email varchar(50) PRIMARY KEY NOT NULL,password varchar(12) NOT NULL,role ENUM('admin','student') NOT NULL);
-Create table courses(course_id INT PRIMARY KEY,course_name varchar(15),description varchar(50),fees INT,start_date date,end_date date,video_expire_days INT);
-create table students(reg_no INT PRIMARY KEY,name varchar(15) NOT NULL,email varchar(50),course_id INT ,mobile_no INT NOT NULL,profile_pic BLOB , FOREIGN KEY(email) REFERENCES users(email),FOREIGN KEY(course_id) REFERENCES courses(course_id));
-create table videos(video_id INT PRIMARY KEY,course_id INT,title varchar(20),description varchar(50),youtube_url varchar(50),added_at date,FOREIGN KEY (course_id) REFERENCES courses(course_id));
+Create table users (email varchar(50) PRIMARY KEY NOT NULL,password varchar(64) NOT NULL,role ENUM('admin','student') NOT NULL);
+Create table courses(course_id INT AUTO_INCREMENT PRIMARY KEY,course_name varchar(15),description varchar(50),fees INT,start_date date,end_date date,video_expire_days INT);
+create table students(reg_no INT AUTO_INCREMENT PRIMARY KEY,name varchar(15) NOT NULL,email varchar(50),course_id INT ,mobile_no INT NOT NULL,profile_pic BLOB , FOREIGN KEY(email) REFERENCES users(email),FOREIGN KEY(course_id) REFERENCES courses(course_id));
+create table videos(video_id INT AUTO_INCREMENT PRIMARY KEY ,course_id INT,title varchar(50),description varchar(50),youtube_url varchar(50),added_at date,FOREIGN KEY (course_id) REFERENCES courses(course_id));
 
 Insert into users values("atharv@gmail.com","atharv123",'student');
 Insert into users values("kaushal@gmail.com","kaushal@123",'student');
