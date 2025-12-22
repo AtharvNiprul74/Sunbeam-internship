@@ -10,7 +10,7 @@ router.get("/course/all-courses",(req,res) => { // check with correct dates from
     const startDate = req.query.start_date
     const endDate = req.query.end_date
 
-    let sql = "Select * from courses where start_date >= ? AND end_date <= ?"
+    let sql = "Select * from courses where start_date <= ? AND end_date >= ?"
 
     pool.query(sql,[startDate,endDate],(error,data) => {
         res.send(createResponse(error,data))

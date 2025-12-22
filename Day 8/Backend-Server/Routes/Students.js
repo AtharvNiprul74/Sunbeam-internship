@@ -2,32 +2,31 @@ const express = require("express")
 const router = express.Router()
 const pool = require("../Database/db")
 const createResponse = require("../Utils/Response")
-
-// to register student
-router.post("/student/register-to-course",(req,res) => {
-    const {courseId,email,name,mobileNo} = req.body
-
-    let sql = "Insert Into students(name,email,course_id,mobile_no) values (?,?,?,?)"
-
-    pool.query(sql,[name,email,courseId,mobileNo],(error,data) => {
-        res.send(createResponse(error,data))
-    })
-})
+const crypto_js = require("crypto-js")
 
 //change password
-// router.put("/student/change-password",(req,res) => {
-//  const {newPassword,confirmPassword} = req.body
+router.put("/student/change-password",(req,res) => {
+ const email = req.user.email
+ const {newPassword,confirmPassword} = req.body
 
-//  let sql = "Update users SET password = ? where email = ? "
+ if(newPassword !== confirmPassword)
+ {
+    res.send("Password not matched ....")
+    return
+ }
 
-//  pool.query(sql,[newPassword],(error,data) => {
-//   res.send(createResponse(error,data))
-//  })
-// })
+ hashedPassword = crypto_js.SHA256(newPassword).toString()
+
+ let sql = "Update users SET password = ? where email = ? "
+
+ pool.query(sql,[hashedPassword,email],(error,data) => {
+  res.send(createResponse(error,data))
+ })
+})
 
 // get all registrated course of student
 router.get("/student/my-courses",(req,res) => {
-    const email = req.query.email // temp pass email from query
+    const email = req.user.email
     
     let sql = "Select c.* from students s Inner Join courses c on s.course_id = c.course_id where s.email = ?"
     
@@ -38,7 +37,7 @@ router.get("/student/my-courses",(req,res) => {
 
 // get all with videos
 router.get("/student/my-courses-with-videos",(req,res) => {
-    const email = req.query.email
+    const email = req.user.email
 
     let sql = "Select c.*,v.title,v.description,v.youtube_url,v.added_at from students s Inner Join courses c on s.course_id = c.course_id Inner join videos v on c.course_id = v.course_id where s.email = ?"
 
