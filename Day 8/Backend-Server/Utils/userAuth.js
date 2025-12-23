@@ -3,6 +3,10 @@ const SECRET = require("./config")
 
 function authenticationUser(req,res,next)
 {
+    if(req.url === "/student/register-to-course")
+    {
+        return next()
+    }
     let token = req.headers.token
     if(!token)
     {
@@ -23,4 +27,16 @@ function authenticationUser(req,res,next)
     }
 }
 
-module.exports = authenticationUser
+function authorizeUserRole(req,res,next)
+{
+    if(req.user.role === "admin")
+    {
+        return next()
+    }
+    else
+    {
+        return res.send("You need permission to access this path ......")
+    }
+}
+
+module.exports = {authenticationUser,authorizeUserRole}

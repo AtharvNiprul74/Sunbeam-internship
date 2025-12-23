@@ -4,6 +4,41 @@ const pool = require("../Database/db")
 const createResponse = require("../Utils/Response")
 const crypto_js = require("crypto-js")
 
+// to register student
+router.post("/student/register-to-course",(req,res) => {
+    const {courseId,email,name,mobileNo} = req.body
+
+    let checkEmail = "Select * from users where email = ?"
+    
+    pool.query(checkEmail,[email],(error,data) => {
+        if(data[0])
+        {
+            let sql = "Insert Into students(name,email,course_id,mobile_no) values (?,?,?,?)"
+
+            pool.query(sql,[name,email,courseId,mobileNo],(error,data) => {
+                res.send(createResponse(error,data))
+            })
+        }
+
+        else
+        {
+            let password = crypto_js.SHA256("Sunbeam").toString()
+            let role="Student"
+            let insertEmail = "Insert into users values (?,?,?)"
+            pool.query(insertEmail,[email,password,role],(error,data) => {
+            
+                let sql = "Insert Into students(name,email,course_id,mobile_no) values (?,?,?,?)"
+
+                pool.query(sql,[name,email,courseId,mobileNo],(error,data) => {
+                    res.send(createResponse(error,data))
+                }) 
+            })
+        }
+    })
+
+})
+
+
 //change password
 router.put("/student/change-password",(req,res) => {
  const email = req.user.email
