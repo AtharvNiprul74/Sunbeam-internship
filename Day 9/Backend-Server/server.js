@@ -3,12 +3,14 @@ const app = express()
 const adminRouter = require("./Routes/Admin")
 const publicRouter = require("./Routes/Public")
 const studentRouter = require("./Routes/Students")
+const userRouter = require("./Routes/register-user") // remove
 const {authenticationUser} = require("./Utils/userAuth")
 const cors = require("cors")
 
 app.use(cors())
 app.use(express.json())
 app.use("/public",publicRouter)
+app.use("/user",userRouter)
 app.use("/admin",authenticationUser,adminRouter)
 app.use("/students",authenticationUser,studentRouter)
 

@@ -6,4 +6,6 @@ const pool = mysql2.createPool({
     database:"sunbeam_db"
 })
 
+// delete tmp table
+
 module.exports = pool
