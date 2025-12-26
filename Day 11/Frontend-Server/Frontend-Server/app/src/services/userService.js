@@ -22,10 +22,11 @@ export async function getUserProfile(token) {
     return response.data
 }
 
-export async function updateProfile(token, mobile) {
-    const URL = config.BASE_URL + '/user'
+export async function updateProfile(token, name, mobileNo) {
+    const URL = config.BASE_URL + '/user/updateprofile'
     const headers = { token }
-    const body = { mobile }
+    const body = { name, mobileNo }
     const response = await axios.put(URL, body, { headers })
+    console.log(response)
     return response.data
 }

@@ -54,31 +54,14 @@ router.get("/getprofile",authUser,(req,res) => {
   })
 })
 
-// // get details by email (student)
-// router.get("/", (req, res) => {
-//   const email = req.headers.email;
-//   const sql = `SELECT * FROM users WHERE email = ?`;
-//   pool.query(sql, [email], (error, data) => {
-//     res.send(result.createResult(error, data));
-//   });
-// });
-
-// // get all students (admin)
-// router.get("/all-students", checkAuthorization, (req, res) => {
-//   // const email = req.headers.email;
-//   const sql = `SELECT * FROM users`;
-//   pool.query(sql, (error, data) => {
-//     res.send(result.createResult(error, data));
-//   });
-// });
-
-router.delete("/", (req, res) => {
-  const uid = req.headers.uid;
-  const sql = `DELETE FROM users WHERE uid = ?`;
-  pool.query(sql, [uid], (error, data) => {
-    res.send(result.createResult(error, data));
-  });
-});
+router.put("/updateprofile",authUser,(req,res) => {
+  const email = req.user
+  const {name,mobileNo} = req.body
+  const sql = "Update users SET name = ? , mobile = ? where email = ?"
+  pool.query(sql,[name,mobileNo,email],(error,data) => {
+    res.send(result.createResult(error,data))
+  })
+})
 
 router.get("/stationery",(req,res) => {
   const sql = `Select * from items`
